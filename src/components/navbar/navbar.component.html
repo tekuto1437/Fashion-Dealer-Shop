@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span (click)="moveToMainPage()" class="title">Fashion-dealer</span>
+    <span class="example-spacer"></span>
+    <button *ngIf="!isLoggedIn" (click)="moveToLoginPage()" mat-icon-button class="navbar-button">
+      <mat-icon [fontIcon]="'assignment_ind'" ></mat-icon>
+    </button>
+    <button *ngIf="isLoggedIn"  (click)="logout()" mat-icon-button class="navbar-button">
+      <mat-icon [fontIcon]="'exit_to_app'" ></mat-icon>
+    </button>
+      <button
+        *ngIf="isLoggedIn"
+        (click)="toggleCartVisibility()" mat-icon-button class="navbar-button">
+        <mat-icon [fontIcon]="'add_shopping_cart'" ></mat-icon>
+      </button>
+  </mat-toolbar-row>
+</mat-toolbar>

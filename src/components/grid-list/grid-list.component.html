@@ -1,0 +1,22 @@
+<mat-grid-list gutterSize="15" [cols]="perPage === 12 ? 6 : perPage === 10 ? 5 : 4" rowHeight="250px">
+  <mat-grid-tile *ngFor="let product of productList">
+    <product-card
+    [id]="product.id"
+    [title]="product.title"
+    [description]="product.description"
+    [price]="product.price"
+    [category]="product.category"
+    [size]="product.size"
+    [totalCounter]="product.totalCounter"
+    [images]="product.images"
+    ></product-card>
+  </mat-grid-tile>
+</mat-grid-list>
+<mat-paginator
+  (page)="changePage($event)"
+  class="pagination"
+  [length]="totalProductsCount"
+  [pageSize]="12"
+  [pageSizeOptions]="[8, 10, 12]"
+  aria-label="Select page">
+</mat-paginator>

@@ -1,0 +1,23 @@
+<div class="cart-container">
+  <div *ngIf="cartList.length" class="cart">
+    <cart-item *ngFor="let item of cartList; let index"
+      (increaseCounter)="increaseCounter($event)"
+      (decreaseCounter)="decreaseCounter($event)"
+      [id]="item.id"
+      [title]="item.title"
+      [description]="item.description"
+      [price]="item.price"
+      [properties]="item.properties"
+      [counter]="item.counter"
+      [images]="item.images"
+    ></cart-item>
+  </div>
+  <div *ngIf="!cartList.length" class="no-cart">
+    <h2 class="no-items">No items in cart</h2>
+  </div>
+  <div *ngIf="cartList.length" class="purchase-container">
+    <span class="money-count">Total count: {{ _priceConverter.fromCentsToDollars(totalCartPrice) }}$</span>
+    <button (click)="makePurchase()" mat-raised-button class="buy-button" color="primary">PURCHASE</button>
+  </div>
+</div>
+<div class="cart-shadow"></div>

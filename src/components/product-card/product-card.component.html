@@ -1,0 +1,14 @@
+<mat-card class="card-container">
+  <img class="card-image" alt="Product image" [src]="images[0] ? bucketURL + images[0].originalUrl : '../../assets/t-shirt.png'" />
+  <mat-card-content>{{ title }} - {{ _priceConverter.fromCentsToDollars(price) }}$</mat-card-content>
+  <mat-card-content class="product-description">{{ description }}</mat-card-content>
+  <div class="category-and-size">
+    {{ category }} - `{{ size }}`
+  </div>
+  <button
+    *ngIf="isLoggedInUser"
+    (click)="addToCart($event)"
+    color="primary"
+    class="add-to-card-button"
+    mat-mini-fab>+</button>
+</mat-card>

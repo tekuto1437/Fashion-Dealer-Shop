@@ -1,0 +1,57 @@
+
+<div class="login-form" *ngIf="isUserWantToLogIn">
+
+  <span class="advertisement-slogan">Log in and use your sale-coupons!</span>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input type="text" [(ngModel)]="loginEmail" [formControl]="email" matInput placeholder="Email">
+    <mat-icon matSuffix>alternate_email</mat-icon>
+    <mat-error *ngIf="email.invalid">{{showErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Password</mat-label>
+    <input [(ngModel)]="loginPassword" [formControl]="password" type="password" matInput placeholder="Password">
+    <mat-icon matSuffix>lock</mat-icon>
+    <mat-error *ngIf="password.invalid">{{showPasswordErrorMessage()}}</mat-error>
+
+  </mat-form-field>
+
+  <button (click)="signIn($event)" mat-button class="form-button">Log in</button>
+
+  <span (click)="toggleUserForm()" class="toggle-question" >Don't have an account?</span>
+
+</div>
+
+
+<div class="register-form" *ngIf="!isUserWantToLogIn">
+
+  <span class="advertisement-slogan">Registered users are able to use sale-coupons!</span>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Username</mat-label>
+    <input [(ngModel)]="registerUsername" type="text" matInput placeholder="Username">
+    <mat-icon matSuffix>assessment</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input [(ngModel)]="registerEmail" [formControl]="email" type="text" matInput placeholder="Email">
+    <mat-icon matSuffix>alternate_email</mat-icon>
+    <mat-error *ngIf="email.invalid">{{showErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Password</mat-label>
+    <input [(ngModel)]="registerPassword" [formControl]="password" type="text" matInput placeholder="Password">
+    <mat-icon matSuffix>lock</mat-icon>
+    <mat-error *ngIf="password.invalid">{{showPasswordErrorMessage()}}</mat-error>
+
+  </mat-form-field>
+
+  <button (click)="signUp($event)" mat-button class="form-button">Sign in</button>
+
+  <span (click)="toggleUserForm()" class="toggle-question" >Already registered?</span>
+
+</div>

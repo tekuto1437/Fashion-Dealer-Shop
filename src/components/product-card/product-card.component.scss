@@ -1,0 +1,42 @@
+.card-container {
+  height: 80%;
+  border: 1px solid rgb(150, 150, 150);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card-image {
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.add-to-card-button {
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+}
+
+.product-description {
+  font-size: 12px;
+  font-weight: normal;
+  word-break: break-word;
+}
+
+.category-and-size {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  background-color: white;
+  border: 1px solid rgb(129, 129, 129);
+  padding: 5px;
+}

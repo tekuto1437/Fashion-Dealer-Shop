@@ -1,0 +1,21 @@
+<div class="cart-item">
+  <div class="product-info-row">
+    <img class="cart-product-image" [src]="images[0] ? bucketURL + images[0].originalUrl : '../../assets/t-shirt.png'" alt="Product image" />
+    <div class="product-price-title">
+      <span class="cart-product-title" >{{ title }}</span>
+      <!-- <span class="cart-produt-info">{{ price }}$</span> -->
+    </div>
+  </div>
+  <div class="price-info">
+    <span class="total-price">Costs: {{ _priceConverter.fromCentsToDollars((price * counter)) }}$</span>
+    <div class="counter-menu">
+      <span
+        (click)="increaseCounter()"
+        class="counter-button interact-button">+</span>
+      <span class="counter-button">{{ counter }}</span>
+      <span
+        (click)="decreaseCounter()"
+        class="counter-button interact-button">-</span>
+    </div>
+  </div>
+</div>
